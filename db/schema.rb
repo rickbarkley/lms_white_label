@@ -11,7 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130821165211) do
+ActiveRecord::Schema.define(:version => 20130821192336) do
+
+  create_table "courses", :force => true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.integer  "cost"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "media_url"
+  end
+
+  create_table "orders", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "course_id"
+    t.datetime "expiration"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "roles", :force => true do |t|
     t.string   "name"
@@ -49,5 +66,14 @@ ActiveRecord::Schema.define(:version => 20130821165211) do
   end
 
   add_index "users_roles", ["user_id", "role_id"], :name => "index_users_roles_on_user_id_and_role_id"
+
+  create_table "videos", :force => true do |t|
+    t.string   "meia_url"
+    t.string   "chapter"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "course_id"
+    t.string   "media"
+  end
 
 end
