@@ -11,4 +11,6 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me
   has_many :orders
   has_many :courses, through: :orders
+  has_many :enrolls
+  has_many :courses, through: :enrolls
 end

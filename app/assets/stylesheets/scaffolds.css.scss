@@ -1,5 +1,6 @@
-body {
+/*body {
   background-color: #fff;
+  background-image: url("header2.png");
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
@@ -19,13 +20,13 @@ pre {
 }
 
 a {
-  color: #000;
+  color: #09c;
   &:visited {
-    color: #666;
+    color: #09c;
   }
   &:hover {
-    color: #fff;
-    background-color: #000;
+    color: #09c;
+    background: none;
   }
 }
 
@@ -67,3 +68,4 @@ div {
     list-style: square;
   }
 }
+*/

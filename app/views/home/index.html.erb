@@ -1,4 +1,8 @@
-<h3>Home</h3>
-<% @users.each do |user| %>
-  <p>User: <%=link_to user.name, user %></p>
-<% end %>
+
+<h3>Welcome to Nuvola Academy</h3>
+	<p>
+	<a href="http://app.nuvola-academy.com/">Nuvola Academy</a> is a revolutionary approach to eLearning.  Build communities, see what's trending, and connect with like minded individuals who share a passion similar to your own.     
+	</p>
+<div class="pagination-centered">
+<%= link_to "Sign Up Now!", new_user_registration_path, class: "btn btn-large btn-primary" %>
+</div>

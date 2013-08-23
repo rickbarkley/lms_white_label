@@ -1,4 +1,13 @@
 NuvolaAcademy::Application.routes.draw do
+  get "pages/contact"
+
+  get "pages/about"
+
+  get "pages/admin"
+
+  resources :enrolls
+
+
   resources :orders
 
 
@@ -13,4 +22,7 @@ NuvolaAcademy::Application.routes.draw do
   root :to => "home#index"
   devise_for :users
   resources :users
+
+match '/admin', :to => 'pages#admin'
+match '/contact', :to => 'pages#contact'
 end

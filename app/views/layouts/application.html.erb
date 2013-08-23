@@ -8,7 +8,7 @@
     <%= javascript_include_tag "https://js.stripe.com/v1/", "application" %>
     <%= csrf_meta_tags %>
     <%= tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY %>
-    <%= yield(:head) %>
+    <%#<%= yield(:head) %>
   </head>
   <body class="<%= controller_name %> <%= action_name %>">
     <div class="navbar navbar-fixed-top">
@@ -27,10 +27,16 @@
               <%= yield %>
             </div>
           </div>
-          <footer>
-          </footer>
+
         </div>
       </div> <!--! end of .container -->
+    <footer>
+		<%= render 'layouts/footer' %>
+    </footer>
+		<div class="pagination-centered">
+		<%= link_to image_tag("N_cloud_small.png", alt: "Nuvola Networks"), 'home' %>	
+	</subfooter>
     </div> <!--! end of #main -->
+
   </body>
 </html>
