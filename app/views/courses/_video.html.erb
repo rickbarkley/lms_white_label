@@ -1,0 +1,7 @@
+<% new_or_existing = video.new_record? ? 'new' : 'existing' %> 
+<% prefix = "course[#{new_or_existing}_video_attributes][]" %> 
+<% fields_for prefix, video do |video_form| -%>
+
+Video URL: <%= video_form.text_field :media_url %> 
+
+<% end -%>

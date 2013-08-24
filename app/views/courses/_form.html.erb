@@ -1,0 +1,41 @@
+<%= form_for(@course) do |f| %>
+  <% if @course.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
+
+      <ul>
+      <% @course.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<h2>course Preview view</h2>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.label "Preview Media URL" %><br />
+    <%= f.text_field :media_url %>
+  </p>
+<p>
+	<%= f.label :cost %><br />
+	$<%= f.number_field :cost %>
+</p>
+<h2>Course Content:</h2>
+<p>
+  <%= f.fields_for :videos do |builder| %>
+    <%= render "video_fields", :f => builder %>
+<% end %>
+<p><%= link_to_add_fields "Add Another Module", f, :videos %></p>
+</p>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

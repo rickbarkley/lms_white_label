@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+<h1>
+<%= @course.title %>
+</h1>
+
+<br />
+<p></p>
+<p></p>
+
+<% if @course.accessible_by_user?(current_user) %>
+
+</p>
+<% for video in @course.videos %>
+<p><strong><%=h video.chapter %></strong></p>
+<p><%=h video.media_url.html_safe %></p>
+</p>
+<% end %>
+
+<% else %>
+<%= render 'course_preview'%>
+<% end %>
+
+<% if current_user.has_role? :admin %>
+<%= link_to 'Edit', edit_course_path(@course) %> 
+<% end %>
