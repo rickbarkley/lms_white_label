@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Nuvola Academy" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Nuvola Academy" %>">
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= javascript_include_tag "https://js.stripe.com/v1/", "application" %>
+    <%= csrf_meta_tags %>
+    <%= tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY %>
+    <%#<%= yield(:head) %>
+  </head>
+  <body class="<%= controller_name %> <%= action_name %>">
+    <div class="navbar navbar-fixed-top">
+      <nav class="navbar-inner">
+        <div class="container">
+          <%= render 'layouts/navigation' %>
+        </div>
+      </nav>
+    </div>
+    <div id="main" role="main">
+      <div class="container">
+        <div class="content">
+           <div class="row">
+            <div class="span12">
+              <%= render 'layouts/messages' %>
+              <%= yield %>
+            </div>
+          </div>
+
+        </div>
+      </div> <!--! end of .container -->
+    <footer>
+		<%= render 'layouts/footer' %>
+    </footer>
+		<div class="pagination-centered">
+		<%= link_to image_tag("N_cloud_small.png", alt: "Nuvola Networks"), 'home' %>	
+	</subfooter>
+    </div> <!--! end of #main -->
+
+  </body>
+</html>
