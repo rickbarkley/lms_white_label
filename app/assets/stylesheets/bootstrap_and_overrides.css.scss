@@ -58,6 +58,7 @@ footer small {
 }
 
 footer ul {
+margin-top: -15px;
   float: right;
   list-style: none;
 }
@@ -75,6 +76,9 @@ footer ul li {
   padding: 2px;
   background-color: red;
   display: table;
+}
+subfooter {
+box-shadow: 0px 0px 0px #888888 !important;
 }
 
 #error_explanation {
