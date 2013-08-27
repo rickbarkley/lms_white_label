@@ -2,8 +2,8 @@ class EnrollsController < ApplicationController
   # GET /enrolls
   # GET /enrolls.json
   def index
-      @course = Course.all
-      @user = User.all
+      @courses = Course.all
+      @users = User.all
     @enrolls = Enroll.all
 
     respond_to do |format|

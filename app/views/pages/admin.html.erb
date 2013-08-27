@@ -1,6 +1,9 @@
+<% if current_user.has_role? :admin %>
 <h1>Admin</h1>
 <p>
 	<%= link_to "Manage Users", users_path %><br /><br />
 	<%= link_to "Manage Courses", courses_path %><br /><br />
-	<%= link_to "Manage Enrollments", enrolls_path %>
+	<%= link_to "Manage Enrollments", enrolls_path %><br /><br />
+	<%= link_to "Manage Orders", orders_path %>
 	</p>
+<% end %>

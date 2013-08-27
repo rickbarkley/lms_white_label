@@ -14,6 +14,7 @@ NuvolaAcademy::Application.routes.draw do
   resources :courses
   resources :courses do
     resources :orders
+    resources :enrolls
     end
 
   authenticated :user do

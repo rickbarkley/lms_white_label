@@ -1,9 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <b>Course:</b>
+  <%= link_to @enroll.course.title, courses_path(@course) %>
+
+<p>
+  <b>User:</b>
+  <%= @enroll.user.name %>
+</p>
+</p>
   <b>Expiration:</b>
   <%= @enroll.expiration %>
 </p>
-
+<% if current_user.has_role? :admin %>
 <%= link_to 'Edit', edit_enroll_path(@enroll) %> |
+<% end %>
 <%= link_to 'Back', enrolls_path %>

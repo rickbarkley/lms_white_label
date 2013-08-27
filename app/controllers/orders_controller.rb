@@ -10,7 +10,7 @@ class OrdersController < ApplicationController
     end
     def index
         #@user = User.find(params[:id])
-    	@orders = Orders.all
+    	@orders = Order.all
         @course = Course.all
         @title = "Available Classes"
     end
