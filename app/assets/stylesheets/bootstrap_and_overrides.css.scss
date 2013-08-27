@@ -1,20 +1,26 @@
 @import "bootstrap";
-.navbar-inner {
-height: 50px !important;
+.navbar-inverse {
+height: 60px !important;
 }
 
 .nav li {
 float: right !important;
 }
 .search-query {
-margin-top: 3px;
+margin-top: 8px;
 
 }
 body { 
 padding-top: 70px; 
-background-image: url("brushed_steel.jpg");
+background-image: url("background_web.PNG");
 background-color: #efefef;
 }
+.content {
+background-image: url("background_web.PNG") !important;
+box-shadow: 0px 0px 0px 0px #888 !important;
+background: #efefef; 
+}
+
 
 p {
 font-size: 16px;
@@ -46,7 +52,9 @@ margin-top: 20px !important;
 /* footer */
 
 footer {
-  padding: 20px;
+border-top: 1px dotted #888;
+margin-right: 20px;
+margin-left: 20px;
 }
 
 footer a {
@@ -82,6 +90,7 @@ footer ul li {
   display: table;
 }
 subfooter {
+background: #888;
 box-shadow: 0px 0px 0px #888888 !important;
 }
 
