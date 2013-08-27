@@ -9,15 +9,28 @@
 
 <% if @course.accessible_by_user?(current_user) %>
 
+
 </p>
 <% for video in @course.videos %>
 <p><strong><%=h video.chapter %></strong></p>
-<p><%=h video.media_url.html_safe %></p>
+<p><%=h video.media.html_safe %></p>
 </p>
 <% end %>
-
 <% else %>
-<%= render 'course_preview'%>
+<p><strong>Description:</strong> <%= @course.description %></p><br />
+
+<p><strong>Preview: </strong></p>
+<%= @course.media_url.html_safe %><br />
+<br />
+<p><strong>Cost:</strong> $<%= @course.cost/100 %></p>
+
+
+
+<%= link_to "Order This Course", new_course_order_path(@course) %> |
+<%= link_to 'Back', courses_path %>
+<br /><br />
+
+
 <% end %>
 
 <% if current_user.has_role? :admin %>
