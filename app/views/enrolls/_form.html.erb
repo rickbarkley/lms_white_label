@@ -1,11 +1,15 @@
-<%= simple_form_for(@enroll) do |f| %>
-  <%= f.error_notification %>
+<%= form_for @enroll do |f| %>
+<%= f.label :course_id %><br />
+  <%= f.select :course_id, Course.find(:all, :order => "title").collect {|s|
+	[(s.title), s.id]} %>
+<%= f.label :user_id %><br />
+  <%= f.select :user_id, User.find(:all, :order => "name").collect {|s|
+	[(s.name), s.id]} %>
+<%= f.label :expiration, "Class Expiration" %><br />
+<%= f.date_select(:expiration, :order => [:month, :day, :year]) %>	
 
-  <div class="form-inputs">
-    <%= f.input :expiration %>
-  </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+  <div class="actions">
+    <%= f.submit %>
+</div>
 <% end %>
