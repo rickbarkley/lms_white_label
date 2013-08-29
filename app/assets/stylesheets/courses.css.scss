@@ -17,6 +17,7 @@ border-bottom-right-radius: 10px;
 -moz-border-bottom-left-radius: 10px;
 -webkit-border-bottom-left-radius:  10px;
 border-bottom-left-radius: 10px;
+
 }
 
 
@@ -37,6 +38,7 @@ font-color: #000;
 }
 
 table {
+padding-top: 50px;
 width: 100%;
 }
 table td {
@@ -45,5 +47,5 @@ border-bottom: 1px dotted #888;
 td {
 font-size: 16px;
 line-height: 20px;
-padding: 10px;
+padding: 20px;
 }
