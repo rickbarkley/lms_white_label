@@ -1,15 +1,37 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+paris img {
+width: 100%;
+box-shadow: 10px 10px 5px #888888 !important;
+}
+
+.header-area {
+background-image: url("background_web.PNG");
+display: block;
+position: absolute !important;
+margin-top: -330px !important;
+margin-left: 35px !important;
+color: #888;
+float: left;
+
+padding: 0.9em 0.9em;
+white-space: nowrap;
+-moz-border-radius:  7px;
+-webkit-border-radius:  7px;
+border-radius:  7px;
+width: 305px;
+}
+.header-area p {
+font-size: 105% !important;
+}
+
 .main-area {
+
 font-size: 115%;
 }
 
-home img {
-margin-left: 10px;
-padding: 10px;
 
-}
 
 .popular-area {
     border-top: 1px dotted #888;
@@ -19,14 +41,14 @@ margin-left: -10px;
 
 .line-area {
 	border-top: 1px dotted #888;
-	margin-left: -10px;
+
 }
 
 
 .teach-area {
     
 	border-right: 1px dotted #888;
-margin-left: -10px;
+
 font-size: 115%;
 }
 

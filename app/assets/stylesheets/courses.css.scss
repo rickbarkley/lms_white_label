@@ -1,6 +1,36 @@
 // Place all the styles related to the courses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+h1 {
+color: #888;
+}
+body {
+
+}
+.background {
+padding-top: 5px;
+background-color: #efefef;
+width: 100%;
+}
+h1 {
+background-color: #efefef;
+}
+home img {
+float: right;
+margin-top: -40px;
+padding: 10px;
+
+}
+.nuvola {
+font-size: 125%;
+line-height: 26px;
+padding: 10px;
+}
+
+.input-append {
+font-color: #000;
+}
+
 table {
 width: 100%;
 }

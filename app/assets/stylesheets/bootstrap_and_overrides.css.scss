@@ -11,7 +11,7 @@ margin-top: 8px;
 
 }
 body { 
-padding-top: 70px; 
+padding-top: 40px; 
 background-image: url("background_web.PNG");
 background-color: #efefef;
 }
@@ -21,10 +21,13 @@ box-shadow: 0px 0px 0px 0px #888 !important;
 background: #efefef; 
 }
 
-
+h1, h2, h3, h4 {
+color: #888;
+}
 p {
 font-size: 16px;
 line-height: 22px;
+
 }
 
 a {
