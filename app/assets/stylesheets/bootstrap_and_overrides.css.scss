@@ -1,4 +1,9 @@
 @import "bootstrap";
+
+header {
+position: absolute;
+overflow: visible;
+}
 .navbar-inverse {
 height: 60px !important;
 }
