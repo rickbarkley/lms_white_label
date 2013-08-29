@@ -3,11 +3,15 @@ class CoursesController < ApplicationController
     # GET /courses
     # GET /courses.json
     def index
+        if params[:search]
+            @courses = Course.search(params[:search]).order("created_at DESC")
+            else
         @courses = Course.all
-        
+        end
         respond_to do |format|
             format.html # index.html.erb
             format.json { render json: @courses }
+            
         end
     end
     
