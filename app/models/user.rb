@@ -9,8 +9,11 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :role_ids, :as => :admin
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me
-  has_many :orders
+  has_many :orders, :dependent => :destroy
   has_many :courses, through: :orders
-  has_many :enrolls
+  has_many :enrolls, :dependent => :destroy
   has_many :courses, through: :enrolls
+  
+  validates :name,  :presence   => true,
+                      :length     => { :maximum => 50 }
 end

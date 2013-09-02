@@ -1,3 +1,18 @@
-<h3>User</h3>
-<p>User: <%= @user.name %></p>
+<h3> Learner Profile </h3>
+<p>User: <b><%= @user.name %></b>  <%= link_to '(Edit account)', edit_user_registration_path %></p>
 <p>Email: <%= @user.email if @user.email %></p>
+
+<p> Courses Enrolled In: </P>
+<% unless @user.orders.empty? %>
+<% @user.orders.each do |order| %>
+<ol><%= order.course.title %></ol>
+	<% end %>
+<% end %>
+
+<% unless @user.enrolls.empty? %>
+<% @user.enrolls.each do |enroll| %>
+<ol><%= enroll.course.title %></ol>
+	<% end %>
+<% end %>
+<br />
+

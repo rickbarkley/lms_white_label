@@ -2,7 +2,7 @@
 <p>Click link below to enter your course</p>
 <p>
   <b>Course:</b>
-  <%= link_to @order.course.title, courses_path(@course) %>
+  <%= link_to @order.course.title, courses_path %>
 </p>
 
 <p>
@@ -13,3 +13,5 @@
 <%= link_to 'Edit', edit_order_path(@order) %> 
 <%= link_to 'Back', orders_path %>
 <% end %>
+
+ <%#<%= link_to @order.course.title, courses_path(@course) %>

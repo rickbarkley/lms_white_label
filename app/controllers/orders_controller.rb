@@ -1,11 +1,14 @@
 class OrdersController < ApplicationController
+  
+  #before_filter :get_course
+  
     def new
         @course = Course.find(params[:course_id])
         @order = @course.orders.new
         
     end
     def show
-        #@course = Course.find(params[:id])
+        
         @order = Order.find(params[:id])
     end
     def index
@@ -57,6 +60,10 @@ class OrdersController < ApplicationController
             format.json { head :no_content }
         end
     end
+    
+    #def get_course
+     # @course = Course.find(params[:course_id])
+#end
 end
 
 
