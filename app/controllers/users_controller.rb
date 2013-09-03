@@ -10,13 +10,19 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
   
-  def update
-    authorize! :update, @user, :message => 'Not authorized as an administrator.'
+  def edit
     @user = User.find(params[:id])
-    if @user.update_attributes(params[:user], :as => :admin)
-      redirect_to users_path, :notice => "User updated."
+  end
+  
+  def update
+    @user = User.find(params[:id])
+    params[:user].delete(:password) if params[:user][:password].blank?
+    params[:user].delete(:password_confirmation) if params[:user][:password].blank? and params[:user][:password_confirmation].blank?
+    if @user.update_attributes(params[:user])
+      flash[:notice] = "Successfully updated User."
+      redirect_to root_path
     else
-      redirect_to users_path, :alert => "Unable to update user."
+      render :action => 'edit'
     end
   end
     
@@ -28,6 +34,26 @@ class UsersController < ApplicationController
       redirect_to users_path, :notice => "User deleted."
     else
       redirect_to users_path, :notice => "Can't delete yourself."
+    end
+  end
+ 
+    def new
+      @user = User.new
+      
+      respond_to do |format|
+        format.html # new.html.erb
+        format.json { render json: @enroll }
+      end
+    end
+    
+    def create
+           @user = User.new(params[:user])
+           if @user.save
+               flash[ :succes] = "Welcome to Nuvola Academy!"
+               redirect_to @user
+               else
+               @title = "Sign Up"
+               render 'new'
     end
   end
 end

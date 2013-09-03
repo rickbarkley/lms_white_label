@@ -1,4 +1,5 @@
 <h3>Users</h3>
+
 <div class="span8">
 <table class="table table-condensed">
   <thead>
@@ -23,8 +24,11 @@
         <%= render user %>
       </td>
       <td><%= link_to("Delete user", user_path(user), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'btn btn-mini') unless user == current_user %></td>
+<td><%= link_to "Edit User", edit_admin_user_path(user) %></td>
     </tr>
   <% end %>
   </tbody>
 </table>
+
 </div>
+

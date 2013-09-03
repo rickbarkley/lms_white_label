@@ -10,8 +10,6 @@ NuvolaAcademy::Application.routes.draw do
 
   resources :orders
 
-
-  #resources :courses
   resources :courses do
     resources :orders
     resources :enrolls
@@ -22,12 +20,15 @@ NuvolaAcademy::Application.routes.draw do
   end
   root :to => "home#index"
   devise_for :users
-  resources :users do
-    resources :courses do
-      resources :orders
-      resources :enrolls
-      end
-    end
+  scope "/admin" do
+    resources :users
+  end
+  
+  resources :users
+  
+  namespace :admin do
+    resources :users # Have the admin manage them here.
+  end
 
 match '/admin', :to => 'pages#admin'
 match '/contact', :to => 'pages#contact'
