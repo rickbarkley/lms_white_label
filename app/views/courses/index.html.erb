@@ -27,7 +27,9 @@
     <th></th>
   </tr>
 
+
 <% @courses.each do |course| %>
+
   <tr>
     <td><strong><%= link_to course.title, course %>  </strong></td>
 	<td><%= course.description %></td>
@@ -44,3 +46,4 @@
 <% if current_user.has_role? :admin %>
 <%= link_to 'New Course', new_course_path %>
 <% end %>
+<%= will_paginate %>

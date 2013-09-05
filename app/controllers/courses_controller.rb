@@ -6,7 +6,7 @@ class CoursesController < ApplicationController
         if params[:search]
             @courses = Course.search(params[:search]).order("created_at DESC")
             else
-        @courses = Course.all
+        @courses = Course.paginate(:page => params[:page], :per_page => 5)
         end
         respond_to do |format|
             format.html # index.html.erb

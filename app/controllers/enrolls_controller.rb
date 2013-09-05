@@ -4,7 +4,7 @@ class EnrollsController < ApplicationController
   def index
       @courses = Course.all
       @users = User.all
-    @enrolls = Enroll.all
+    @enrolls = Enroll.paginate(:page => params[:page], :per_page => 10)
 
     respond_to do |format|
       format.html # index.html.erb
