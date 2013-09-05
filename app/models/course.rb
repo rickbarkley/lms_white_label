@@ -1,8 +1,8 @@
 class Course < ActiveRecord::Base
     has_many :videos, :dependent => :destroy
-    has_many :orders
+    has_many :orders, :dependent => :destroy
     has_many :users, through: :orders
-    has_many :enrolls
+    has_many :enrolls, :dependent => :destroy
     has_many :users, through: :enrolls
     attr_accessible :videos_attributes, :cost, :description, :title, :media_url, :chapter, :media
     accepts_nested_attributes_for :videos, :allow_destroy => true
