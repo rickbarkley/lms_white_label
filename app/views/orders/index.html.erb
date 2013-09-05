@@ -1,5 +1,5 @@
 <h1>Listing orders</h1>
-
+<% if current_user.has_role? :admin %>
 <table>
   <tr>
     <th>Expiration</th>
@@ -11,7 +11,7 @@
 <% @orders.each do |order| %>
   <tr>
     <td><%= order.expiration %></td>
-	<%#<td><%= order.course.title %></td>
+	<td><%= order.course.title %></td>
 	<td><%= order.user.name %></td>
 
     <td><%= link_to 'Show', order %></td>
@@ -23,4 +23,4 @@
 
 <br />
 
-<%= link_to 'New Order', new_order_path %>
+<% end %>
