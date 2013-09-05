@@ -5,6 +5,7 @@ gem 'sqlite3'
 gem 'heroku'
 gem 'stripe'
 gem 'formtastic-bootstrap'
+gem 'gravatar_image_tag'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

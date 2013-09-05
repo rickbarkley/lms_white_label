@@ -1,5 +1,7 @@
-<center><h1> Learner Profile </h1></center>
-<p>User: <b><%= @user.name %></b>  <%= link_to '(Edit account)', edit_user_registration_path %></p>
+<h1> <%= gravatar_for @user %><%= @user.name %> </h1>
+
+
+<%= link_to '(Edit account)', edit_user_registration_path %></p>
 <p>Email: <%= @user.email if @user.email %></p>
 
 <p> Courses Enrolled In: </P>
