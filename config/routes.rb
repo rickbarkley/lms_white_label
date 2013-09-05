@@ -32,4 +32,7 @@ NuvolaAcademy::Application.routes.draw do
 
 match '/admin', :to => 'pages#admin'
 match '/contact', :to => 'pages#contact'
+match '/about', :to => 'pages#about'
+match '/organizations', :to => 'pages#organizations'
+match '/creators', :to => 'pages#creators'
 end

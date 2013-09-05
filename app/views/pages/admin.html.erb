@@ -1,5 +1,5 @@
 <% if current_user.has_role? :admin %>
-<h1>Admin</h1>
+<center><h1>Admin</h1></center>
 <p>
 	<%= link_to "Manage Users", users_path %><br /><br />
 	<%= link_to "Add a New User", new_admin_user_path %><br /><br />
