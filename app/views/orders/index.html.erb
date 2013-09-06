@@ -4,6 +4,8 @@
 <table>
   <tr>
     <th>Expiration</th>
+    <th>Date Created</th>
+	<th>user_id</th>
     <th>Course Title</th>
     <th>Name</th>
     <th></th>
@@ -18,6 +20,8 @@
 <% @orders.each do |order| %>
   <tr>
     <td><%= order.expiration %></td>
+	<td><%= created_at %></td>
+	<td><%= user_id %>
 	<td><%= order.course.title %></td>
 	<td><%= order.user.name %></td>
 
