@@ -14,4 +14,4 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
-	<script src="http://jwpsrv.com/library/+PW3kO76EeKteCIACqoQEQ.js"></script>
+<script type="text/javascript" src="/jwplayer/jwplayer.js" ></script>
