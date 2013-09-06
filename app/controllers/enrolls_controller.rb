@@ -2,9 +2,11 @@ class EnrollsController < ApplicationController
   # GET /enrolls
   # GET /enrolls.json
   def index
-      @courses = Course.all
-      @users = User.all
-    @enrolls = Enroll.paginate(:page => params[:page], :per_page => 10)
+      	  if params[:search]
+              @enrolls = Enroll.search(params[:search]).paginate(:page => params[:page], :per_page => 5)       
+            else
+          @enrolls = Enroll.paginate(:page => params[:page], :per_page => 5)
+          end
 
     respond_to do |format|
       format.html # index.html.erb

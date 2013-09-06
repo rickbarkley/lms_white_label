@@ -13,7 +13,12 @@ class OrdersController < ApplicationController
     end
     def index
         #@user = User.find(params[:id])
-    	@orders = Order.paginate(:page => params[:page], :per_page => 10)
+    	  if params[:search]
+            @orders = Order.search(params[:search]).paginate(:page => params[:page], :per_page => 5)       
+          else
+        @orders = Order.paginate(:page => params[:page], :per_page => 5)
+        end
+    	
         @course = Course.all
         @title = "Available Classes"
     end

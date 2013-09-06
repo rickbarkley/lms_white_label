@@ -4,8 +4,8 @@ class CoursesController < ApplicationController
     # GET /courses.json
     def index
         if params[:search]
-            @courses = Course.search(params[:search]).order("created_at DESC")
-            else
+            @courses = Course.search(params[:search]).paginate(:page => params[:page], :per_page => 5)       
+          else
         @courses = Course.paginate(:page => params[:page], :per_page => 5)
         end
         respond_to do |format|
