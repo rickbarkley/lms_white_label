@@ -1,7 +1,20 @@
-</p>
+
+
+
 <% for video in @course.videos %>
 <p><strong><%=h video.chapter %></strong></p>
+
+<div id='<%=h video.module %>'></div> 
+<p>
+<script type='text/javascript'>     jwplayer('<%=h video.module %>').setup({         
+file: '<%=h video.awsurl.html_safe %>',         
+image: 'Enter a JPG or PNG preview image URL',         
+title: '<%=h video.chapter %>',         
+width: '500',         
+aspectratio: '16:9',         
+fallback: 'false'     }); </script></p>
+
 <p><%=h video.media.html_safe %></p>
-</p>
+
 
 <% end %>

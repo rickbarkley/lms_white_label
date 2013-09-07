@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130822143950) do
+ActiveRecord::Schema.define(:version => 20130907160541) do
 
   create_table "courses", :force => true do |t|
     t.string   "title"
@@ -82,6 +82,8 @@ ActiveRecord::Schema.define(:version => 20130822143950) do
     t.datetime "updated_at", :null => false
     t.integer  "course_id"
     t.string   "media"
+    t.string   "awsurl"
+    t.string   "module"
   end
 
 end

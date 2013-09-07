@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  
+  before_filter :authenticate_user!  
   #before_filter :get_course
   
     def new
@@ -12,7 +12,7 @@ class OrdersController < ApplicationController
         @order = Order.find(params[:id])
     end
     def index
-        #@user = User.find(params[:id])
+        authorize! :index, @user, :message => 'Not authorized as an administrator.'
     	  if params[:search]
             @orders = Order.search(params[:search]).paginate(:page => params[:page], :per_page => 5)       
           else

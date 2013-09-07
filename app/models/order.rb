@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: orders
+#
+#  id         :integer          not null, primary key
+#  user_id    :integer
+#  course_id  :integer
+#  expiration :datetime
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class Order < ActiveRecord::Base
     attr_accessible :course_title, :stripe_card_token, :course_id, :user_id
     attr_accessor :stripe_card_token

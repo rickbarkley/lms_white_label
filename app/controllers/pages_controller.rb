@@ -8,6 +8,7 @@ class PagesController < ApplicationController
   end
 
   def admin
+    authorize! @user, :message => 'Not authorized as an administrator.'
       @title = "Admin" 
   end
   

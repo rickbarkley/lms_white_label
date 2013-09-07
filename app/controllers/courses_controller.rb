@@ -1,4 +1,5 @@
 class CoursesController < ApplicationController
+    before_filter :authenticate_user!
     #before_filter :admin_user,   :only => [:destroy, :create, :edit, :update]
     # GET /courses
     # GET /courses.json
@@ -29,6 +30,7 @@ class CoursesController < ApplicationController
     # GET /courses/new
     # GET /courses/new.json
     def new
+      authorize! :new, @user, :message => 'Not authorized as an administrator.'
         @course = Course.new
         @video = Video.new
         #1.times do
@@ -49,6 +51,7 @@ class CoursesController < ApplicationController
     # POST /courses
     # POST /courses.json
     def create
+      authorize! :create, @user, :message => 'Not authorized as an administrator.'
         @course = Course.new(params[:course])
         
         respond_to do |format|
@@ -65,6 +68,7 @@ class CoursesController < ApplicationController
     # PUT /courses/1
     # PUT /courses/1.json
     def update
+      authorize! :update, @user, :message => 'Not authorized as an administrator.'
         @course = Course.find(params[:id])
         
         respond_to do |format|
@@ -81,6 +85,7 @@ class CoursesController < ApplicationController
     # DELETE /courses/1
     # DELETE /courses/1.json
     def destroy
+      authorize! :destroy, @user, :message => 'Not authorized as an administrator.'
         @course = Course.find(params[:id])
         @course.destroy
         

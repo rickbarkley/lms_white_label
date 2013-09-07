@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: enrolls
+#
+#  id         :integer          not null, primary key
+#  user_id    :integer
+#  course_id  :integer
+#  expiration :datetime
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class Enroll < ActiveRecord::Base
     attr_accessible :expiration, :user_id, :course_id
     belongs_to :user

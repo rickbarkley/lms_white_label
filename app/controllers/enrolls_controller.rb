@@ -1,7 +1,9 @@
 class EnrollsController < ApplicationController
+    before_filter :authenticate_user!
   # GET /enrolls
   # GET /enrolls.json
   def index
+    authorize! :index, @user, :message => 'Not authorized as an administrator.'
       	  if params[:search]
               @enrolls = Enroll.search(params[:search]).paginate(:page => params[:page], :per_page => 5)       
             else
@@ -29,6 +31,7 @@ class EnrollsController < ApplicationController
   # GET /enrolls/new
   # GET /enrolls/new.json
   def new
+    authorize! :new, @user, :message => 'Not authorized as an administrator.'
     @enroll = Enroll.new
 
     respond_to do |format|
@@ -39,6 +42,7 @@ class EnrollsController < ApplicationController
 
   # GET /enrolls/1/edit
   def edit
+    authorize! :edit, @user, :message => 'Not authorized as an administrator.'
     @enroll = Enroll.find(params[:id])
   end
 
@@ -61,6 +65,7 @@ class EnrollsController < ApplicationController
   # PUT /enrolls/1
   # PUT /enrolls/1.json
   def update
+    authorize! :update, @user, :message => 'Not authorized as an administrator.'
     @enroll = Enroll.find(params[:id])
 
     respond_to do |format|
@@ -77,6 +82,7 @@ class EnrollsController < ApplicationController
   # DELETE /enrolls/1
   # DELETE /enrolls/1.json
   def destroy
+    authorize! :destroy, @user, :message => 'Not authorized as an administrator.'
     @enroll = Enroll.find(params[:id])
     @enroll.destroy
 

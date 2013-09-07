@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: courses
+#
+#  id          :integer          not null, primary key
+#  title       :string(255)
+#  description :string(255)
+#  cost        :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  media_url   :string(255)
+#
+
 class Course < ActiveRecord::Base
     has_many :videos, :dependent => :destroy
     has_many :orders, :dependent => :destroy
